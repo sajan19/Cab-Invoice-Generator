@@ -37,7 +37,7 @@ public class InvoiceGeneratorTest {
         Ride[] rides = { new Ride(2.0,5),
                         new Ride(0.1,1)
         };
-        //Calling of Method Calculate Fare
+        //Calling of Method Calculate Multiple Ride Fare
         double fare = invoiceGenerator.calculateFare(rides);
         //Assertions to check Expected and Actual Value
         Assertions.assertEquals(30, fare,0.0);
