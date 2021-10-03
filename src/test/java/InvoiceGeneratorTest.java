@@ -28,4 +28,18 @@ public class InvoiceGeneratorTest {
         //Assertions to check Expected and Actual Value
         Assertions.assertEquals(5, fare,0.0);
     }
+    //Test Case 2 to Calculate Multiple Rides Fare
+    @Test
+    public void givenMultipleRides_ShouldReturnTotalFare() {
+        //Create an Object
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        //Create an Array to get different values
+        Ride[] rides = { new Ride(2.0,5),
+                        new Ride(0.1,1)
+        };
+        //Calling of Method Calculate Fare
+        double fare = invoiceGenerator.calculateFare(rides);
+        //Assertions to check Expected and Actual Value
+        Assertions.assertEquals(30, fare,0.0);
+    }
 }
