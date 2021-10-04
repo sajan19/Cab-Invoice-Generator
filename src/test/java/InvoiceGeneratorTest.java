@@ -35,14 +35,15 @@ public class InvoiceGeneratorTest {
     }
     //Test Case 2 to Calculate Multiple Rides Fare
     @Test
-    public void givenMultipleRides_ShouldReturnTotalFare() {
+    public void givenMultipleRides_ShouldReturnInvoiceSummary() {
         //Create an Array to get different values
         Ride[] rides = { new Ride(2.0,5),
                         new Ride(0.1,1)
         };
         //Calling of Method Calculate Multiple Ride Fare
-        double fare = invoiceGenerator.calculateFare(rides);
+        InvoiceSummary summary = invoiceGenerator.calculateFare(rides);
+        InvoiceSummary expectedInvoiceSummary =  new InvoiceSummary(2,30.0);
         //Assertions to check Expected and Actual Value
-        Assertions.assertEquals(30, fare,0.0);
+        Assertions.assertEquals(expectedInvoiceSummary, summary);
     }
 }
